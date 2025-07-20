@@ -20,16 +20,10 @@ public class EmployeeController {
 
 	private final EmployeeServiceImpl employeeServiceImpl;
 
-//	@PostMapping("/string")
-//	public String saveString(@Validated @RequestBody EmployeeVo employeeVo) {
-//		log.info("Request received to save the employeeVo :: {}", employeeVo);
-//		return employeeServiceImpl.saveString(employeeVo);
-//	}
-	
 	@PostMapping("/json")
 	public String saveJson(@Validated @RequestBody EmployeeVo employeeVo) {
 		log.info("Request received to save the employeeVo :: {}", employeeVo);
-		return employeeServiceImpl.saveJson(employeeVo);
+		return employeeServiceImpl.produceEmployeeJson(employeeVo);
 	}
 
 }

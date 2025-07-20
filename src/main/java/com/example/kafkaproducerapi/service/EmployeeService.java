@@ -4,5 +4,5 @@ import vo.EmployeeVo;
 
 public interface EmployeeService {
 
-	public String saveJson(EmployeeVo employeeVo);
+	public String produceEmployeeJson(EmployeeVo employeeVo);
 }

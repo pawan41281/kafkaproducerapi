@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.example.kafkaproducerapi.kafka.KafkaProducer;
+import com.example.kafkaproducerapi.producer.KafkaProducer;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,22 +17,12 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	private final KafkaProducer kafkaProducer;
 	
-//	@Override
-//	public String saveString(EmployeeVo employeeVo) {
-//		log.info("employeeVo :: {}", employeeVo);
-//		String referenceNumber = null;
-//		referenceNumber = UUID.randomUUID().toString().replace("-", "").substring(0, 12).toUpperCase();
-//		kafkaProducer.produceString(referenceNumber, employeeVo.toString());
-//		log.info("Reference Number for employeeVo :: {}",referenceNumber);
-//		return referenceNumber;
-//	}
-	
 	@Override
-	public String saveJson(EmployeeVo employeeVo) {
+	public String produceEmployeeJson(EmployeeVo employeeVo) {
 		log.info("employeeVo :: {}", employeeVo);
 		String referenceNumber = null;
 		referenceNumber = UUID.randomUUID().toString().replace("-", "").substring(0, 12).toUpperCase();
-		kafkaProducer.produceJson(referenceNumber, employeeVo);
+		kafkaProducer.produceEmployeeJson(referenceNumber, employeeVo);
 		log.info("Reference Number for employeeVo :: {}",referenceNumber);
 		return referenceNumber;
 	}
